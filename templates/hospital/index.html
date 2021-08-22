@@ -1,12 +1,8 @@
 {% extends 'hospital/homebase.html' %}
 {% load static %}
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
-
 
 {% block content %}
+
 
 
 <head>
@@ -14,8 +10,9 @@ facebook : fb.com/sumit.luv
     .jumbotron {
       margin-top: 0px;
       margin-bottom: 0px;
-      background-image: url('{% static "images/bg.jpg" %}');
-      background-size: cover;
+      background-image: url('{% static "images/bkgrnd.jpeg" %}');
+      background-position: center;
+      background-size: 1950px 600px;
       background-repeat: no-repeat;
     }
 
@@ -32,21 +29,21 @@ facebook : fb.com/sumit.luv
 
 
     .glow {
-      font-size: 50px;
-      color: white;
+      font-size: 55px;
+      color: rgb(255, 0, 0);
       text-align: center;
       -webkit-animation: glow 1s ease-in-out infinite alternate;
       -moz-animation: glow 1s ease-in-out infinite alternate;
       animation: glow 1s ease-in-out infinite alternate;
     }
-
+    
     @-webkit-keyframes glow {
       from {
-        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
       }
 
       to {
-        text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #c4548c, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
       }
     }
   </style>
@@ -56,7 +53,8 @@ facebook : fb.com/sumit.luv
 
 <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
   <br>
-  <h5 class="display-3 glow">You’ll Love the Way We Care for You</h5>
+  <h5 class="display-3 glow">“Healthy citizens are the greatest asset any country can have.”</h5>
+  <h5 class="display-3 glow">Winston Churchill</h5>
   <br><br><br><br><br>
   <p>
   <h3>Emergency ?</h3>
@@ -71,10 +69,5 @@ facebook : fb.com/sumit.luv
 
 {% include "hospital/admin_doctor_patient_card.html" %}
 <br><br><br>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 {% endblock content %}

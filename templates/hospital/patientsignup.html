@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>LazyCoder || sumit</title>
+  <title>MedchainDZ</title>
   <style type="text/css">
     body {
       color: #aa082e;
@@ -46,6 +46,8 @@
       background: #0062cc;
       color: #fff;
     }
+
+    
   </style>
 
 </head>
@@ -61,7 +63,7 @@
 
 
 
-  <!--- signup page for patient by admin(sumit)  ---------->
+  <!--- signup page for patient by admin  ---------->
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container register-form">
@@ -83,10 +85,16 @@
                 {% render_field patientForm.address class="form-control" placeholder="Address" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+                {% render_field patientForm.sexe class="form-control" placeholder="Sexe" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+                {% render_field patientForm.situation_F class="form-control" placeholder="Family Situation" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.brth_day class="form-control" placeholder="Day of Birth" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Assigned Doctor" %}
               </div>
             </div>
             <div class="col-md-6">
@@ -97,16 +105,21 @@
                 {% render_field userForm.password class="form-control" placeholder="Password" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Mobile Number" %}
+                {% render_field patientForm.mobile class="form-control" placeholder="Mobile Number" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
+                {% render_field patientForm.nom_jeune_fille class="form-control" placeholder="Maiden Name" %}
               </div>
-
+              <div class="form-group">
+                {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+              </div>
             </div>
           </div>
           <button type="submit" class="btnSubmit">Register</button>
-          <div class="text-center">Already have an account? <a href="patientlogin">Login here</a></div>
+          <div class="text-center">Already have an account? <a href="/patientlogin">Login here</a></div>
         </div>
       </div>
     </div>
@@ -115,10 +128,5 @@
 
   {% include "hospital/footer.html" %}
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 </html>

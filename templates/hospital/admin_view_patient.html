@@ -21,10 +21,7 @@
     }
   </style>
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
+
 <div class="container">
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -35,31 +32,22 @@ facebook : fb.com/sumit.luv
         <tr>
           <th>Name</th>
           <th>Profile Picture</th>
-          <th>Symptoms</th>
+          <th>Age</th>
           <th>Mobile</th>
           <th>Address</th>
-          <th>Update</th>
-          <th>Delete</th>
         </tr>
       </thead>
       {% for p in patients %}
       <tr>
         <td> {{p.get_name}}</td>
         <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>{{p.symptoms}}</td>
+        <td>{{p.age}}</td>
         <td>{{p.mobile}}</td>
         <td>{{p.address}}</td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-patient' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-patient-from-hospital' p.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
       {% endfor %}
     </table>
   </div>
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 {% endblock content %}

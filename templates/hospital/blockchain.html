@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MedchainDZ</title>
+  <style media="screen">
+    
+    
+
+    table {
+        margin-left: -380px;
+        width: 70%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    } 
+    
+    th{
+        background-color: #337AB7;
+    }
+
+    th, td{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .col-sm-9 {
+        margin-left: -500px;
+        word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+    {% include "hospital/navbar.html" %}
+    <br><br>
+    
+    <div class="container">
+        <br><br>
+        <center>
+        <h1>List of blocks</h1>
+        </center>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col"> Index </th>
+                    <th scope="col"> Previous Hash </th>
+                    <th scope="col"> Block Hash </th>
+                    <th scope="col"> Nonce </th>
+                    <th scope="col"> Timestamp </th>
+                    <th scope="col"> Transaction </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% block content %}
+                {%if blocks%}
+                {%for block in blocks%}
+                <tr>
+                    <td># {{ block.index}}</td>
+                    <td>{{ block.previousHash }}</td>
+                    <td>{{ block.hash }}</td>
+                    <td>{{ block.Nonce }}</td>
+                    <td>{{ block.Time }}</td>
+                    <td>{{ block.transaction }}</td>
+                </tr>
+                {%endfor%}
+                {%else%}
+                There is no blocks yet !!
+                {%endif%}
+                {% endblock %} 
+            </tbody>               
+        </table>          
+    </div>
+    
+</body>
+
+</html>
